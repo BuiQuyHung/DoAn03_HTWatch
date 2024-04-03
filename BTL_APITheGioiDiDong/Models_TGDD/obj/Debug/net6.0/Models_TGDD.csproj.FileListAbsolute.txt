@@ -1,0 +1,60 @@
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.deps.json
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.AssemblyReference.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfoInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfo.cs
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.CoreCompileInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\refint\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\ref\Models_TGDD.dll
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.deps.json
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.dll
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.pdb
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.AssemblyReference.cache
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfoInputs.cache
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfo.cs
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.CoreCompileInputs.cache
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.dll
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\refint\Models_TGDD.dll
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.pdb
+D:\New folder (21)\BTL_API\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\ref\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.deps.json
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.AssemblyReference.cache
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfoInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfo.cs
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.CoreCompileInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\refint\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\ref\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.deps.json
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.AssemblyReference.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfoInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfo.cs
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.CoreCompileInputs.cache
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\refint\Models_TGDD.dll
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.pdb
+D:\UTEHY_Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\ref\Models_TGDD.dll
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.deps.json
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.dll
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\bin\Debug\net6.0\Models_TGDD.pdb
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.AssemblyReference.cache
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfoInputs.cache
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.AssemblyInfo.cs
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.csproj.CoreCompileInputs.cache
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.dll
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\refint\Models_TGDD.dll
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\Models_TGDD.pdb
+D:\Hoc Tap\Nam 3\Phat Trien Phan Mem (BE)\BTL_API_Final\BTL_APITheGioiDiDong\Models_TGDD\obj\Debug\net6.0\ref\Models_TGDD.dll
