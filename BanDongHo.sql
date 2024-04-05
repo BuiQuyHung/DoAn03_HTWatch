@@ -129,7 +129,15 @@ CREATE TABLE Menu (
 	MaMenuCha INT,
 	FOREIGN KEY (MaMenu) REFERENCES SanPham(MaSP)
 )
-
+CREATE TABLE BinhLuan (
+	MaBL INT IDENTITY(1,1) PRIMARY KEY,
+    MaSP INT,
+    HoTen NVARCHAR(50),
+    NgayGio DATETIME,
+    NoiDung NVARCHAR(MAX),
+	DienThoai NVARCHAR(50)
+	FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
+)
 -- Chèn 10 danh mục hãng đồng hồ vào bảng DanhMucSanPham
 INSERT INTO DanhMucSanPham (TenDanhMuc) VALUES ('Rolex');
 INSERT INTO DanhMucSanPham (TenDanhMuc) VALUES ('Omega');
@@ -242,6 +250,19 @@ INSERT INTO NhaPhanPhoi (TenNPP, DiaChi, DienThoai) VALUES (N'Công ty TNHH Đ�
 INSERT INTO NhaPhanPhoi (TenNPP, DiaChi, DienThoai) VALUES (N'Cửa hàng Đồng Hồ Long Thành', N'456 Đường WXY, Quận 9, TP.HCM', '0321895746');
 INSERT INTO NhaPhanPhoi (TenNPP, DiaChi, DienThoai) VALUES (N'Công ty TNHH Đồng Hồ Thành Đạt', N'789 Đường ZAB, Quận 10, TP.HCM', '0976543218');
 
+-- Chèn 10 bản ghi bình luận vào bảng BinhLuan
+INSERT INTO BinhLuan (MaSP, HoTen, NgayGio, NoiDung, DienThoai)
+VALUES 
+    (1, N'Nguyễn Văn A', '2024-04-05 10:00:00', N'Đánh giá tốt', '123456789'),
+    (2, N'Nguyễn Thị B', '2024-04-05 10:30:00', N'Sản phẩm chất lượng', '987654321'),
+    (1, N'Trần Văn C', '2024-04-05 11:00:00', N'Đáng giá tiền', '456123789'),
+    (3, N'Phạm Thị D', '2024-04-05 11:30:00', N'Giao hàng nhanh', '159357246'),
+    (2, N'Huỳnh Văn E', '2024-04-05 12:00:00', N'Chất lượng kém', '369852147'),
+    (1, N'Trần Thị F', '2024-04-05 12:30:00', N'Chưa hài lòng', '258147369'),
+    (3, N'Lê Văn G', '2024-04-05 13:00:00', N'Đã mua lần 2', '987456321'),
+    (2, N'Võ Thị H', '2024-04-05 13:30:00', N'Sản phẩm tệ', '654789321'),
+    (1, N'Nguyễn Văn I', '2024-04-05 14:00:00', N'Không đáng tiền', '456789123'),
+    (3, N'Trần Văn K', '2024-04-05 14:30:00', N'Chất lượng tốt', '123789456');
 
 -- Thêm dữ liệu vào bảng HoaDonBan
 INSERT INTO HoaDonBan (NgayBan, MaNV, MaKH, TongTien)
