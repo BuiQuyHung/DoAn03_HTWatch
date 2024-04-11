@@ -10,6 +10,7 @@ namespace BBL_TGDD.Interfaces
     public partial interface ISanPhamBusiness
     {
         SanPhamModel GetDatabyID(string id);
+        IEnumerable<SanPhamModel> GetData();
         bool Create(SanPhamModel model);
         bool Update(SanPhamModel model);
         bool Delete(string MaSP);

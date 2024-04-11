@@ -133,6 +133,24 @@ namespace DataAccessLayer
 
             return ConvertTo<T>(rows);
         }
+        public static IList<T> ConvertToB<T>(this DataTable table, int limit = 8)
+        {
+            if (table == null || table.Rows.Count == 0) // Kiểm tra xem DataTable có tồn tại và có hàng không
+            {
+                return new List<T>(); // Trả về danh sách rỗng nếu không có dữ liệu
+            }
+
+            var rows = new List<DataRow>();
+
+            for (int i = 0; i < Math.Min(limit, table.Rows.Count); i++) // Sử dụng Math.Min để đảm bảo không vượt quá số lượng hàng trong DataTable
+            {
+                rows.Add(table.Rows[i]); // Thêm hàng vào danh sách
+            }
+
+            return ConvertTo<T>(rows); // Chuyển đổi danh sách các DataRow thành danh sách các đối tượng kiểu T và trả về
+        }
+
+
         public static T CreateItem<T>(DataRow row)
         {
             T obj = default(T);

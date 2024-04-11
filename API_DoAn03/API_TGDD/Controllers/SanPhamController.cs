@@ -28,6 +28,12 @@ namespace API_TGDD.Controllers
         {
             return _sanphamBusiness.GetDatabyID(MaSP);
         }
+        [Route("get-data")]
+        [HttpGet]
+        public IEnumerable<SanPhamModel> GetData()
+        {
+            return _sanphamBusiness.GetData();
+        }
         [Route("Create-SanPham")]
         [HttpPost]
         public SanPhamModel CreateItem([FromBody] SanPhamModel model)

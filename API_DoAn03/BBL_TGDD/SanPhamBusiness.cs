@@ -20,6 +20,10 @@ namespace BBL_TGDD
         {
             return _res.GetDatabyID(id);
         }
+        public IEnumerable<SanPhamModel> GetData()
+        {
+            return _res.GetData();
+        }
         public bool Create(SanPhamModel model)
         {
             return _res.Create(model);

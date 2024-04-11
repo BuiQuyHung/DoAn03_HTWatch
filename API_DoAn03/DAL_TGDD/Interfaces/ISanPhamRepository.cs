@@ -10,6 +10,7 @@ namespace DAL_TGDD.Interfaces
     public partial interface ISanPhamRepository
     {
         SanPhamModel GetDatabyID(string MaSP);
+        IEnumerable<SanPhamModel> GetData();
         bool Create(SanPhamModel model);
         bool Update(SanPhamModel model);
         bool Delete(string MaSP);

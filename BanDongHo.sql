@@ -29,6 +29,16 @@ CREATE TABLE SanPham
   CONSTRAINT PK_SanPham PRIMARY KEY (MaSP),
   CONSTRAINT FK_SanPham_DanhMucSanPham FOREIGN KEY (MaDanhMuc) REFERENCES DanhMucSanPham(MaDanhMuc)
 )
+ALTER TABLE SanPham
+ADD XuatXu NVARCHAR(50), 
+    ThuongHieu NVARCHAR(50),
+    ThoiGianBaoHanh NVARCHAR(50), 
+    LoaiMay NVARCHAR(50), 
+    ChatLieu NVARCHAR(50), 
+    DoDay INT;
+ALTER TABLE SanPham
+ALTER COLUMN Mota TEXT;
+
 CREATE TABLE NhanVien
 (
   MaNV INT IDENTITY(1,1) NOT NULL,

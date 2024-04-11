@@ -32,6 +32,37 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
+        public IEnumerable<SanPhamModel> GetData()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "GetNewestProducts8");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<SanPhamModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //public SanPhamModel GetData()
+        //{
+        //    string msgError = "";
+        //    try
+        //    {
+        //        var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "GetNewestProducts8"
+        //             );
+        //        if (!string.IsNullOrEmpty(msgError))
+        //            throw new Exception(msgError);
+        //        return dt.ConvertToB<SanPhamModel>();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
         public bool Create(SanPhamModel model)
         {
             string msgError = "";
