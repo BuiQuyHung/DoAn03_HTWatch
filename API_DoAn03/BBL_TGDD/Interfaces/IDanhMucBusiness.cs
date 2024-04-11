@@ -9,6 +9,7 @@ namespace BBL_TGDD.Interfaces
 {
     public partial interface IDanhMucBusiness
     {
+        IEnumerable<DanhMucModel> GetAllData();
         DanhMucModel GetDatabyID(string id);
         bool Create(DanhMucModel model);
         bool Update(DanhMucModel model);

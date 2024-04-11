@@ -36,6 +36,10 @@ namespace BBL_TGDD
         {
             return _res.Search(pageIndex, pageSize, out total, ma_san_pham, ten_san_pham);
         }
+        public List<SanPhamModel> Search1(int pageIndex, int pageSize, out long total, string ma_danh_muc)
+        {
+            return _res.Search1(pageIndex, pageSize, out total, ma_danh_muc);
+        }
         public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()
         {
             return _res.ThongKeHangHoaTonKho();

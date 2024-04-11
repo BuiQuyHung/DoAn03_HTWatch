@@ -77,6 +77,33 @@ namespace API_TGDD.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [Route("search1")]
+        [HttpPost]
+        public IActionResult Search1([FromBody] Dictionary<string, object> formData)
+        {
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+                string ma_danh_muc = "";
+                if (formData.Keys.Contains("MaDanhMuc") && !string.IsNullOrEmpty(Convert.ToString(formData["MaDanhMuc"]))) { ma_danh_muc = Convert.ToString(formData["MaDanhMuc"]); }
+                long total = 0;
+                var data = _sanphamBusiness.Search1(page, pageSize, out total, ma_danh_muc);
+                return Ok(
+                    new
+                    {
+                        TotalItems = total,
+                        Data = data,
+                        Page = page,
+                        PageSize = pageSize
+                    }
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         [Route("thong-ke-hang-hoa-ton-kho")]
         [HttpGet]
         public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()

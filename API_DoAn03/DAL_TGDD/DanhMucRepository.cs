@@ -11,6 +11,21 @@ namespace DAL_TGDD
 {
     public class DanhMucRepository : IDanhMucRepository
     {
+        public IEnumerable<DanhMucModel> GetAllData()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_danhmuc_GetAll");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<DanhMucModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private IDatabaseHelper _dbHelper;
         public DanhMucRepository(IDatabaseHelper dbHelper)
         {

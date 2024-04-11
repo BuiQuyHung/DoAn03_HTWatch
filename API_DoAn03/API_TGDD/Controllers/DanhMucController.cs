@@ -21,6 +21,12 @@ namespace API_TGDD.Controllers
             _path = configuration["AppSettings:PATH"];
             _env = env;
         }
+        [Route("get-all-data")]
+        [HttpGet]
+        public IEnumerable<DanhMucModel> GetAllData()
+        {
+            return _danhmucBusiness.GetAllData();
+        }
         [Route("get-by-id/{MaDanhMuc}")]
         [HttpGet]
         public DanhMucModel GetDatabyID(string MaDanhMuc)

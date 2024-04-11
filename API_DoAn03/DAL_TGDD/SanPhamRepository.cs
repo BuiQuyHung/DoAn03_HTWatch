@@ -121,6 +121,26 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
+        public List<SanPhamModel> Search1(int pageIndex, int pageSize, out long total, string ma_danh_muc)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_sanpham_search1",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize,
+                    "@MaDanhMuc", ma_danh_muc);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<SanPhamModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()
         {
             string msgError = "";

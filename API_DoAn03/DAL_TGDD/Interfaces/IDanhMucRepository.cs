@@ -9,6 +9,7 @@ namespace DAL_TGDD.Interfaces
 {
     public partial interface IDanhMucRepository
     {
+        IEnumerable<DanhMucModel> GetAllData();
         DanhMucModel GetDatabyID(string MaDanhMuc);
         bool Create(DanhMucModel model);
         bool Update(DanhMucModel model);

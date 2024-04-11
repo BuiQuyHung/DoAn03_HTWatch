@@ -16,6 +16,10 @@ namespace BBL_TGDD
         {
             _res = res;
         }
+        public IEnumerable<DanhMucModel> GetAllData()
+        {
+            return _res.GetAllData();
+        }
         public DanhMucModel GetDatabyID(string id)
         {
             return _res.GetDatabyID(id);
