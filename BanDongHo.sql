@@ -16,6 +16,7 @@ CREATE TABLE KhachHang
   DienThoai NVARCHAR(50),
   CONSTRAINT PK_KhachHang PRIMARY KEY (MaKH)
 )
+
 CREATE TABLE SanPham
 (
   MaSP INT IDENTITY(1,1) NOT NULL,
@@ -24,20 +25,19 @@ CREATE TABLE SanPham
   HinhAnh NVARCHAR(200),
   GiaSP INT,
   SoLuong INT NOT NULL,
-  MaMenu INT NOT NULL ,
-  Mota NVARCHAR(200),
+  MaMenu INT ,
+  Mota NVARCHAR(MAX), 
+  XuatXu NVARCHAR(50), 
+  ThuongHieu NVARCHAR(50),
+  ThoiGianBaoHanh NVARCHAR(50), 
+  LoaiMay NVARCHAR(50), 
+  ChatLieu NVARCHAR(50), 
+  DoDay INT,
   CONSTRAINT PK_SanPham PRIMARY KEY (MaSP),
   CONSTRAINT FK_SanPham_DanhMucSanPham FOREIGN KEY (MaDanhMuc) REFERENCES DanhMucSanPham(MaDanhMuc)
-)
-ALTER TABLE SanPham
-ADD XuatXu NVARCHAR(50), 
-    ThuongHieu NVARCHAR(50),
-    ThoiGianBaoHanh NVARCHAR(50), 
-    LoaiMay NVARCHAR(50), 
-    ChatLieu NVARCHAR(50), 
-    DoDay INT;
-ALTER TABLE SanPham
-ALTER COLUMN Mota TEXT;
+
+);
+
 
 CREATE TABLE NhanVien
 (
@@ -212,30 +212,46 @@ INSERT INTO Menu (TenMenu, Cap, MaMenuCha) VALUES (N'Đồng hồ thể thao', 1
 INSERT INTO Menu (TenMenu, Cap, MaMenuCha) VALUES (N'Đồng hồ cơ', 1, NULL);
 INSERT INTO Menu (TenMenu, Cap, MaMenuCha) VALUES (N'Đồng hồ thông minh', 1, NULL);
 
--- Chèn 20 bản ghi vào bảng SanPham kết hợp từ các dữ liệu đã cung cấp
-INSERT INTO SanPham (TenSP, MaDanhMuc, HinhAnh, GiaSP, SoLuong, MaMenu, Mota)
+-- Chèn các bản ghi vào bảng SanPham kết hợp từ các dữ liệu đã cung cấp
+INSERT INTO SanPham (TenSP, MaDanhMuc, HinhAnh, GiaSP, SoLuong, MaMenu, Mota, XuatXu, ThuongHieu, ThoiGianBaoHanh, LoaiMay, ChatLieu, DoDay)
 VALUES 
-(N'Đồng hồ Rolex Nam 1', 1, 'rolex1.jpg', 1500, 10, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Rolex Nam 2', 1, 'rolex2.jpg', 1600, 8, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Omega Nam 1', 1, 'omega1.jpg', 1200, 15, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Omega Nam 2', 1, 'omega2.jpg', 1300, 12, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Rolex Nam 3', 1, 'rolex1.jpg', 1500, 10, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Rolex Nam 4', 1, 'rolex2.jpg', 1600, 8, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Omega Nam 3', 1, 'omega1.jpg', 1200, 15, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Omega Nam 4', 1, 'omega2.jpg', 1300, 12, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Rolex Nam 5', 1, 'rolex1.jpg', 1500, 10, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Rolex Nam 6', 1, 'rolex2.jpg', 1600, 8, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Omega Nam 5', 1, 'omega1.jpg', 1200, 15, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Omega Nam 6', 1, 'omega2.jpg', 1300, 12, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Rolex Nam 7', 1, 'rolex1.jpg', 1500, 10, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Rolex Nam 8', 1, 'rolex2.jpg', 1600, 8, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Omega Nam 7', 1, 'omega1.jpg', 1200, 15, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Omega Nam 8', 1, 'omega2.jpg', 1300, 12, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Rolex Nam 9', 1, 'rolex1.jpg', 1500, 10, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Rolex Nam 10', 1, 'rolex2.jpg', 1600, 8, 1, N'Đồng hồ nam chính hãng Rolex'),
-(N'Đồng hồ Omega Nam 9', 1, 'omega1.jpg', 1200, 15, 1, N'Đồng hồ nam chính hãng Omega'),
-(N'Đồng hồ Omega Nam 10', 1, 'omega2.jpg', 1300, 12, 1, N'Đồng hồ nam chính hãng Omega');
-
+(N'Đồng hồ Rolex Nam 1', 1, '../img/pro01.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 1', 2, '../img/pro02.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 1', 3, '../img/pro03.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 1', 1, '../img/pro04.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 1', 2, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 1', 1, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Rolex Nam 2', 1, '../img/pro07.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 2', 2, '../img/pro08.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 2', 1, '../img/pro01.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 2', 2, '../img/pro02.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 2', 1, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 2', 1, '../img/pro03.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Rolex Nam 3', 2, '../img/pro04.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 3', 2, '../img/pro06.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 3', 3, '../img/pro07.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 3', 4, '../img/pro08.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 3', 5, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 3', 1, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Rolex Nam 4', 1, '../img/pro01.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 4', 2, '../img/pro02.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 4', 2, '../img/pro03.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 4', 1, '../img/pro04.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 4', 2, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 4', 1, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Rolex Nam 5', 1, '../img/pro07.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 5', 2, '../img/pro08.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 5', 2, '../img/pro01.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 5', 4, '../img/pro04.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 5', 1, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 5', 1, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Rolex Nam 6', 1, '../img/pro07.jpg', 1000, 50, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Thụy Sĩ', N'Rolex', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Casio Nam 6', 2, '../img/pro08.jpg', 1500, 30, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Nhật Bản', N'Casio', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Orient Nam 6', 3, '../img/pro03.jpg', 1200, 20, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Anh', N'Orient', N'Bảo hành 3 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Omega Nam 6', 4, '../img/pro04.jpg', 2000, 25, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Pháp', N'Omega', N'Bảo hành 1 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 3),
+(N'Đồng hồ Citizen Nam 6', 1, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+(N'Đồng hồ Tissot Nam 6', 2, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
+('Sản phẩm 10', 3, 'image10.jpg', 280000, 22, 3, N'Mô tả sản phẩm 10', N'Xuất xứ 10', N'Thương hiệu 10', N'Bảo hành 10', N'Loại máy 10', N'Chất liệu 10', 32);
 -- Chèn 10 bản ghi vào bảng KhuyenMai với mã sản phẩm như đã cho trong bảng SanPham
 INSERT INTO KhuyenMai (MaSP, KhuyenMai, NgayBatDau, NgayKetThuc) VALUES (1, 0.1, '2024-04-01', '2024-04-07');
 INSERT INTO KhuyenMai (MaSP, KhuyenMai, NgayBatDau, NgayKetThuc) VALUES (2, 0.15, '2024-04-03', '2024-04-10');

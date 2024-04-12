@@ -75,7 +75,13 @@ namespace DAL_TGDD
                 "@GiaSP", model.GiaSP,
                 "@SoLuong", model.SoLuong,
                 "@MaMenu", model.MaMenu,
-                "@MoTa", model.MoTa);
+                "@MoTa", model.MoTa,
+                "@XuatXu", model.XuatXu,
+                "@ThuongHieu", model.ThuongHieu,
+                "@ThoiGianBaoHanh", model.ThoiGianBaoHanh,
+                "@LoaiMay", model.LoaiMay,
+                "@ChatLieu", model.ChatLieu,
+                "@DoDay", model.DoDay);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -100,7 +106,13 @@ namespace DAL_TGDD
                 "@GiaSP", model.GiaSP,
                 "@SoLuong", model.SoLuong,
                 "@MaMenu", model.MaMenu,
-                "@MoTa", model.MoTa);
+                "@MoTa", model.MoTa,
+                "@XuatXu", model.XuatXu,
+                "@ThuongHieu", model.ThuongHieu,
+                "@ThoiGianBaoHanh", model.ThoiGianBaoHanh,
+                "@LoaiMay", model.LoaiMay,
+                "@ChatLieu", model.ChatLieu,
+                "@DoDay", model.DoDay);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);

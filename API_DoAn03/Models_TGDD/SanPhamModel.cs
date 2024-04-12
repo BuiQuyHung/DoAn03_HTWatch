@@ -12,9 +12,15 @@ namespace Models_TGDD
         public string TenSP { get; set; }
         public string MaDanhMuc { get; set; }
         public string HinhAnh { get; set; }
-        public string GiaSP { get; set; }
-        public float SoLuong { get; set; }
-        public string MaMenu { get; set; }
+        public int GiaSP { get; set; }
+        public int SoLuong { get; set; }
+        public int MaMenu { get; set; }
         public string MoTa { get; set; }
+        public string XuatXu { get; set; }
+        public string ThuongHieu { get; set; }
+        public string ThoiGianBaoHanh { get; set; }
+        public string LoaiMay { get; set; }
+        public string ChatLieu { get; set; }
+        public int DoDay { get; set; }
     }
 }
