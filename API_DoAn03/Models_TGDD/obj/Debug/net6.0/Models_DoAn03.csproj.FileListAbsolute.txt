@@ -22,3 +22,15 @@ D:\Hoc Tap\Nam 3\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_D
 D:\Hoc Tap\Nam 3\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\refint\Models_DoAn03.dll
 D:\Hoc Tap\Nam 3\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.pdb
 D:\Hoc Tap\Nam 3\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\ref\Models_DoAn03.dll
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\bin\Debug\net6.0\Models_DoAn03.deps.json
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\bin\Debug\net6.0\Models_DoAn03.dll
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\bin\Debug\net6.0\Models_DoAn03.pdb
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.csproj.AssemblyReference.cache
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.AssemblyInfoInputs.cache
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.AssemblyInfo.cs
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.csproj.CoreCompileInputs.cache
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.dll
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\refint\Models_DoAn03.dll
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\Models_DoAn03.pdb
+D:\Hoc Tap\Năm 3\DoAn03_React\DoAn03_HTWatch\API_DoAn03\Models_TGDD\obj\Debug\net6.0\ref\Models_DoAn03.dll

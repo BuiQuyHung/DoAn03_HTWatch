@@ -8,6 +8,7 @@ CREATE TABLE DanhMucSanPham
   TenDanhMuc NVARCHAR(50) NOT NULL,
   CONSTRAINT PK_DanhMucSanPham PRIMARY KEY (MaDanhMuc)
 )
+
 CREATE TABLE KhachHang
 (
   MaKH INT IDENTITY(1,1) NOT NULL,
@@ -35,9 +36,28 @@ CREATE TABLE SanPham
   DoDay INT,
   CONSTRAINT PK_SanPham PRIMARY KEY (MaSP),
   CONSTRAINT FK_SanPham_DanhMucSanPham FOREIGN KEY (MaDanhMuc) REFERENCES DanhMucSanPham(MaDanhMuc)
+)
 
-);
+CREATE TABLE DonHang(
+  MaDonHang INT IDENTITY(1,1) NOT NULL,
+  TenKH NVARCHAR(50) NOT NULL,
+  NgayTao DATETIME,
+  Email NVARCHAR(50) NOT NULL,
+  SDT NVARCHAR(50) NOT NULL,
+  DiaChi NVARCHAR(50) NOT NULL,
+  ThanhTien DECIMAL,
+  PRIMARY KEY (MaDonHang) -- Đặt cột MaDonHang làm khóa chính
+)
 
+CREATE TABLE ChiTietDonHang(
+  MaChiTietDonHang INT IDENTITY(1,1) NOT NULL,
+  MaDonHang INT NOT NULL,
+  MaSP INT NOT NULL,
+  GiaSP INT,
+  SoLuong INT NOT NULL,
+  TongTien FLOAT NOT NULL,
+  CONSTRAINT FK_ChiTietDonHang_DonHang FOREIGN KEY (MaDonHang) REFERENCES DonHang(MaDonHang) -- Sửa lại tên cột liên kết
+)
 
 CREATE TABLE NhanVien
 (
@@ -49,6 +69,7 @@ CREATE TABLE NhanVien
   NgaySinh DATE,
   CONSTRAINT PK_NhanVien PRIMARY KEY (MaNV)
 )
+
 CREATE TABLE HoaDonBan
 (
   MaHDBan INT IDENTITY(1,1) NOT NULL,
@@ -60,6 +81,7 @@ CREATE TABLE HoaDonBan
   CONSTRAINT FK_HoaDonBan_NhanVien FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
   CONSTRAINT FK_HoaDonBan_KhachHang FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH)
 )
+
 CREATE TABLE ChiTietHDBan
 (
   MaCTHDBan INT IDENTITY(1,1) NOT NULL,
@@ -72,6 +94,7 @@ CREATE TABLE ChiTietHDBan
   CONSTRAINT FK_ChiTietHDBan_HoaDonBan FOREIGN KEY (MaHDBan) REFERENCES HoaDonBan(MaHDBan),
   CONSTRAINT FK_ChiTietHDBan_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
 CREATE TABLE NhaPhanPhoi
 (
   MaNPP INT IDENTITY(1,1) NOT NULL,
@@ -80,6 +103,7 @@ CREATE TABLE NhaPhanPhoi
   DienThoai NVARCHAR(50) NOT NULL,
   CONSTRAINT PK_NhaPhanPhoi PRIMARY KEY (MaNPP)
 )
+
 CREATE TABLE HoaDonNhap
 (
   MaHDNhap INT IDENTITY(1,1) NOT NULL,
@@ -91,6 +115,7 @@ CREATE TABLE HoaDonNhap
   CONSTRAINT FK_HoaDonNhap_NhanVien FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
   CONSTRAINT FK_HoaDonNhap_NhaPhanPhoi FOREIGN KEY (MaNPP) REFERENCES NhaPhanPhoi(MaNPP)
 )
+
 CREATE TABLE ChiTietHDNhap
 (
   MaCTHDNhap INT IDENTITY(1,1) NOT NULL,
@@ -103,6 +128,7 @@ CREATE TABLE ChiTietHDNhap
   CONSTRAINT FK_ChiTietHDNhap_HoaDonNhap FOREIGN KEY (MaHDNhap) REFERENCES HoaDonNhap(MaHDNhap),
   CONSTRAINT FK_ChiTietHDNhap_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
 CREATE TABLE NguoiDung
 (
   UserID NVARCHAR(50),
@@ -110,6 +136,7 @@ CREATE TABLE NguoiDung
   Per INT NOT NULL,
   CONSTRAINT PK_NguoiDung PRIMARY KEY (UserID),	
 )
+
 CREATE TABLE TinTuc (
     MaTinTuc INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     TieuDe NVARCHAR(250),
@@ -118,6 +145,7 @@ CREATE TABLE TinTuc (
     UserID NVARCHAR(50),
     FOREIGN KEY (UserID) REFERENCES NguoiDung(UserID)
 )
+
 CREATE TABLE KhuyenMai (
 	MaKhuyenMai INT IDENTITY(1,1) PRIMARY KEY,
     MaSP INT,
@@ -126,12 +154,14 @@ CREATE TABLE KhuyenMai (
     NgayKetThuc DATE,
 	FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
 CREATE TABLE ChiTietAnh (
 	MaCTA INT IDENTITY(1,1) PRIMARY KEY,
     MaSP INT,
     Anh VARCHAR(500),
 	FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
 CREATE TABLE Menu (
 	MaMenu INT IDENTITY(1,1) PRIMARY KEY,
     TenMenu NVARCHAR(50),
@@ -139,6 +169,7 @@ CREATE TABLE Menu (
 	MaMenuCha INT,
 	FOREIGN KEY (MaMenu) REFERENCES SanPham(MaSP)
 )
+
 CREATE TABLE BinhLuan (
 	MaBL INT IDENTITY(1,1) PRIMARY KEY,
     MaSP INT,
@@ -148,6 +179,7 @@ CREATE TABLE BinhLuan (
 	DienThoai NVARCHAR(50)
 	FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
 -- Chèn 10 danh mục hãng đồng hồ vào bảng DanhMucSanPham
 INSERT INTO DanhMucSanPham (TenDanhMuc) VALUES ('Rolex');
 INSERT INTO DanhMucSanPham (TenDanhMuc) VALUES ('Omega');
@@ -252,6 +284,7 @@ VALUES
 (N'Đồng hồ Citizen Nam 6', 1, '../img/pro05.jpg', 1800, 35, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Đức', N'Citizen', N'Bảo hành 2 năm', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
 (N'Đồng hồ Tissot Nam 6', 2, '../img/pro06.jpg', 2200, 40, 1, N'Được chế tác từ niềm đam mê, tận tâm và kiên trì từ nhiều thế hệ những nghệ nhân tài ba bậc nhất Thụy Sỹ, đồng hồ Ernest Borel chính là lựa chọn hoàn hảo để tôn lên phong cách, vị thế của quý ông và quý cô đích thực. ', N'Việt Nam', N'Tissot', N'Bảo hành 6', N'Loại máy cơ', N'Chất liệu kính Sapphire', 2),
 ('Sản phẩm 10', 3, 'image10.jpg', 280000, 22, 3, N'Mô tả sản phẩm 10', N'Xuất xứ 10', N'Thương hiệu 10', N'Bảo hành 10', N'Loại máy 10', N'Chất liệu 10', 32);
+
 -- Chèn 10 bản ghi vào bảng KhuyenMai với mã sản phẩm như đã cho trong bảng SanPham
 INSERT INTO KhuyenMai (MaSP, KhuyenMai, NgayBatDau, NgayKetThuc) VALUES (1, 0.1, '2024-04-01', '2024-04-07');
 INSERT INTO KhuyenMai (MaSP, KhuyenMai, NgayBatDau, NgayKetThuc) VALUES (2, 0.15, '2024-04-03', '2024-04-10');
@@ -307,14 +340,14 @@ VALUES
 DECLARE @i INT = 2;
 WHILE @i <= 10
 BEGIN
-    -- Thêm dữ liệu vào bảng HoaDonBan
+-- Thêm dữ liệu vào bảng HoaDonBan
     INSERT INTO HoaDonBan (NgayBan, MaNV, MaKH, TongTien)
     VALUES (DATEADD(DAY, @i, '2024-04-01'), 1, 1, 1500000 + (@i * 100000));
 
-    -- Lấy mã hóa đơn vừa thêm
+-- Lấy mã hóa đơn vừa thêm
     DECLARE @MaHoaDonBan INT = SCOPE_IDENTITY();
 
-    -- Thêm dữ liệu vào bảng ChiTietHDBan
+-- Thêm dữ liệu vào bảng ChiTietHDBan
     INSERT INTO ChiTietHDBan (MaHDBan, MaSP, SoLuong, DonGia, ThanhTien)
     VALUES 
         (@MaHoaDonBan, 1, 2, 500000, 1000000 + (@i * 100000)), -- Chi tiết sản phẩm 1
@@ -335,18 +368,19 @@ INSERT INTO ChiTietHDNhap (MaHDNhap, MaSP, SoLuong, DonGia, ThanhTien)
 VALUES 
     (@MaHoaDonNhap, 1, 2, 500000, 1000000), -- Chi tiết sản phẩm 1
     (@MaHoaDonNhap, 2, 1, 600000, 600000);   -- Chi tiết sản phẩm 2
+
 -- Thêm bản ghi thứ 2 đến bản ghi thứ 10
 DECLARE @i INT = 2;
 WHILE @i <= 10
 BEGIN
-    -- Thêm dữ liệu vào bảng HoaDonNhap
+-- Thêm dữ liệu vào bảng HoaDonNhap
     INSERT INTO HoaDonNhap (NgayNhap, MaNV, MaNPP, TongTien)
     VALUES (DATEADD(DAY, @i, '2024-04-01'), 1, 1, 1500000 + (@i * 100000));
 
-    -- Lấy mã hóa đơn vừa thêm
+-- Lấy mã hóa đơn vừa thêm
     DECLARE @MaHoaDonNhap INT = SCOPE_IDENTITY();
 
-    -- Thêm dữ liệu vào bảng ChiTietHDNhap
+-- Thêm dữ liệu vào bảng ChiTietHDNhap
     INSERT INTO ChiTietHDNhap (MaHDNhap, MaSP, SoLuong, DonGia, ThanhTien)
     VALUES 
         (@MaHoaDonNhap, 1, 2, 500000, 1000000 + (@i * 100000)), -- Chi tiết sản phẩm 1
@@ -354,3 +388,22 @@ BEGIN
 
     SET @i = @i + 1;
 END;
+
+-- Thêm 10 bản ghi vào bảng DonHang
+DECLARE @i INT = 1;
+WHILE @i <= 10
+BEGIN
+    INSERT INTO DonHang (TenKH, NgayTao, Email, SDT, DiaChi, ThanhTien)
+    VALUES ('Khách hàng ' + CONVERT(NVARCHAR(10), @i), GETDATE(), 'email' + CONVERT(NVARCHAR(10), @i) + '@example.com', '0123456789', 'Địa chỉ ' + CONVERT(NVARCHAR(10), @i), 100.00 * @i);
+    SET @i = @i + 1;
+END;
+
+-- Thêm 10 bản ghi vào bảng ChiTietDonHang
+DECLARE @j INT = 1;
+WHILE @j <= 10
+BEGIN
+    INSERT INTO ChiTietDonHang (MaDonHang, MaSP, GiaSP, SoLuong, TongTien)
+    VALUES (@j, @j, 100.00 * @j, @j * 2, 200.00 * @j);
+    SET @j = @j + 1;
+END;
+

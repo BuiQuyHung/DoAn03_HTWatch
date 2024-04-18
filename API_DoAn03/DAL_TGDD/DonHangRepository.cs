@@ -9,40 +9,40 @@ using System.Threading.Tasks;
 
 namespace DAL_TGDD
 {
-    public class HoaDonBanRepository : IHoaDonBanRepository
+    public class DonHangRepository : IDonHangRepository
     {
         private IDatabaseHelper _dbHelper;
-        public HoaDonBanRepository(IDatabaseHelper dbHelper)
+        public DonHangRepository(IDatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
         }
-        public HoaDonBanModel GetDatabyID(string MaHDBan)
+        public DonHangModel GetDatabyID(string MaDonHang)
         {
             string msgError = "";
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_hoadonban_get_by_id",
-                     "@MaHDBan", MaHDBan);
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_donhang_get_by_id",
+                     "@MaDonHang", MaDonHang);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return dt.ConvertTo<HoaDonBanModel>().FirstOrDefault();
+                return dt.ConvertTo<DonHangModel>().FirstOrDefault();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public bool Create(HoaDonBanModel model)
+        public bool Create(DonHangModel model)
         {
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadonban_create",
-                "@NgayBan", model.NgayBan,
-                "@MaNV", model.MaNV,
-                "@MaKH", model.MaKH,
-                "@TongTien", model.TongTien,
-                "@list_json_chitiethoadonban", model.list_json_chitiethoadonban != null ? MessageConvert.SerializeObject(model.list_json_chitiethoadonban) : null);
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_donhang_create",
+                "@TenKhachHang", model.TenKH,
+                "@Email", model.Email,
+                "@SoDienThoai", model.SDT,
+                "@DiaChi", model.DiaChi,
+                "@list_json_chitietdonhang", model.list_json_chitietdonhang != null ? MessageConvert.SerializeObject(model.list_json_chitietdonhang) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -54,18 +54,19 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
-        public bool Update(HoaDonBanModel model)
+        public bool Update(DonHangModel model)
         {
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadonban_update",
-                "@MaHDBan", model.MaHDBan,
-                "@NgayBan", model.NgayBan,
-                "@MaNV", model.MaNV,
-                "@MaKH", model.MaKH,
-                "@TongTien", model.TongTien,
-                "@list_json_chitiethoadonban", model.list_json_chitiethoadonban != null ? MessageConvert.SerializeObject(model.list_json_chitiethoadonban) : null);
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_donhang_update",
+                "@MaDonHang", model.MaDonHang,
+                "@TenKhachHang", model.TenKH,
+                "@Email", model.Email,
+                "@SoDienThoai", model.SDT,
+                "@DiaChi", model.DiaChi,
+                
+                "@list_json_chitietdonhang", model.list_json_chitietdonhang != null ? MessageConvert.SerializeObject(model.list_json_chitietdonhang) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -78,13 +79,13 @@ namespace DAL_TGDD
             }
         }
 
-        public bool Delete(string MaHDBan)
+        public bool Delete(string MaDonHang)
         {
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadonban_delete",
-                "@MaHDBan", MaHDBan);
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_donhang_delete",
+                "@MaDonHang", MaDonHang);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -96,22 +97,21 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
-        public List<HoaDonBanModel> Search(int pageIndex, int pageSize, out long total, string ma_hoa_don, string ma_NV, string ma_KH)
+        public List<DonHangModel> Search(int pageIndex, int pageSize, out long total, string ma_don_hang, string ten_khach_hang)
         {
             string msgError = "";
             total = 0;
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_hoadonban_search",
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_donhang_search",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,
-                    "@ma_hoa_don", ma_hoa_don,
-                    "@ma_nhan_vien", ma_NV,
-                    "@ma_khach_hang", ma_KH);
+                    "@ma_don_hang", ma_don_hang,
+                    "@ten_khach_hang", ten_khach_hang);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
-                return dt.ConvertTo<HoaDonBanModel>().ToList();
+                return dt.ConvertTo<DonHangModel>().ToList();
             }
             catch (Exception ex)
             {

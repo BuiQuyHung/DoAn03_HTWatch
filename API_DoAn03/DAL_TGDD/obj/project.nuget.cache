@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S99byoypD0kFP8r4gNvL2Su+hXLFsYcuQYY/6LbGCrfc+9FmfU4kxo9IO9pJj86HOdw21wcNRyri2e9SqpDvLA==",
+  "dgSpecHash": "1hWolCn/99/H5Ek5w/K3HWGVTDE96d9Cus5ys2mq0xVUE5l+oB6xY0n5wXCucDsTjOHUT44013Spw2E0QMwMSA==",
   "success": true,
-  "projectFilePath": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\DAL_TGDD\\DAL_DoAn03.csproj",
+  "projectFilePath": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\DAL_TGDD\\DAL_DoAn03.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

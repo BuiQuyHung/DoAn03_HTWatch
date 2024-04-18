@@ -1505,11 +1505,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\API_NguoiDung.csproj",
+      "projectUniqueName": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\API_NguoiDung.csproj",
       "projectName": "API_NguoiDung",
-      "projectPath": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\API_NguoiDung.csproj",
+      "projectPath": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\API_NguoiDung.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\obj\\",
+      "outputPath": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\BTL_API_NguoiDung\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1526,11 +1526,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\BBL_TGDD\\BBL_DoAn03.csproj": {
-              "projectPath": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\BBL_TGDD\\BBL_DoAn03.csproj"
+            "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\BBL_TGDD\\BBL_DoAn03.csproj": {
+              "projectPath": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\BBL_TGDD\\BBL_DoAn03.csproj"
             },
-            "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\Models_TGDD\\Models_DoAn03.csproj": {
-              "projectPath": "D:\\Hoc Tap\\Nam 3\\DoAn03_HTWatch\\API_DoAn03\\Models_TGDD\\Models_DoAn03.csproj"
+            "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\Models_TGDD\\Models_DoAn03.csproj": {
+              "projectPath": "D:\\Hoc Tap\\Năm 3\\DoAn03_React\\DoAn03_HTWatch\\API_DoAn03\\Models_TGDD\\Models_DoAn03.csproj"
             }
           }
         }
