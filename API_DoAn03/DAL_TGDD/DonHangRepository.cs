@@ -65,7 +65,6 @@ namespace DAL_TGDD
                 "@Email", model.Email,
                 "@SoDienThoai", model.SDT,
                 "@DiaChi", model.DiaChi,
-                
                 "@list_json_chitietdonhang", model.list_json_chitietdonhang != null ? MessageConvert.SerializeObject(model.list_json_chitietdonhang) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
