@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace BBL_TGDD
 {
@@ -44,9 +45,21 @@ namespace BBL_TGDD
         {
             return _res.Search1(pageIndex, pageSize, out total, ma_danh_muc);
         }
-        public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()
+        public List<ThongKeSanPhamTonKhoModel> ThongKeSanPhamTonKho(int pageIndex, int pageSize, out long total)
         {
-            return _res.ThongKeHangHoaTonKho();
+            return _res.ThongKeSanPhamTonKho(pageIndex, pageSize, out total);
+        }
+        public List<ThongKeSanPhamBanChayModel> ThongKeSanPhamBanChay(int pageIndex, int pageSize, out long total, DateTime NgayBatDau, DateTime NgayKetThuc)
+        {
+            return _res.ThongKeSanPhamBanChay(pageIndex, pageSize, out total, NgayBatDau, NgayKetThuc);
+        }
+        public List<BaoCaoDoanhThuModel> BaoCaoDoanhThu(int pageIndex, int pageSize, out long total, DateTime NgayBatDau, DateTime NgayKetThuc)
+        {
+            return _res.BaoCaoDoanhThu(pageIndex, pageSize, out total, NgayBatDau, NgayKetThuc);
+        }
+        public List<BaoCaoDoanhThuTheoNamModel> BaoCaoDoanhThuTheoNam(int Nam)
+        {
+            return _res.BaoCaoDoanhThuTheoNam(Nam);
         }
     }
 }

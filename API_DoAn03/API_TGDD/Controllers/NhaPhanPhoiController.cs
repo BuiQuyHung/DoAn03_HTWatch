@@ -22,6 +22,12 @@ namespace API_TGDD.Controllers
             _path = configuration["AppSettings:PATH"];
             _env = env;
         }
+        [Route("get-all-data")]
+        [HttpGet]
+        public IEnumerable<NhaPhanPhoiModel> GetAllData()
+        {
+            return _nhaphanphoiBusiness.GetAllData();
+        }
         [Route("get-by-id/{MaNPP}")]
         [HttpGet]
         public NhaPhanPhoiModel GetDatabyID(string MaNPP)

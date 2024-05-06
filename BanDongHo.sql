@@ -48,6 +48,8 @@ CREATE TABLE DonHang(
   ThanhTien DECIMAL,
   PRIMARY KEY (MaDonHang) -- Đặt cột MaDonHang làm khóa chính
 )
+ALTER TABLE DonHang
+ADD ThanhTien DECIMAL;
 
 CREATE TABLE ChiTietDonHang(
   MaChiTietDonHang INT IDENTITY(1,1) NOT NULL,
@@ -179,6 +181,33 @@ CREATE TABLE BinhLuan (
 	DienThoai NVARCHAR(50)
 	FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
 )
+
+CREATE TABLE [User] (
+    user_id NVARCHAR(50) NOT NULL,
+    hoten NVARCHAR(150) NULL,
+    ngaysinh DATE NULL,
+    diachi NVARCHAR(250) NULL,
+    gioitinh NVARCHAR(30) NULL,
+    email VARCHAR(150) NULL,
+    taikhoan VARCHAR(30) NULL,
+    matkhau VARCHAR(60) NULL,
+    role VARCHAR(30) NULL,
+    image_url VARCHAR(300) NULL,
+    CONSTRAINT PK_user PRIMARY KEY CLUSTERED (user_id)
+);
+INSERT INTO [User] (user_id, hoten, ngaysinh, diachi, gioitinh, email, taikhoan, matkhau, role, image_url) 
+VALUES 
+('1', 'Nguyen Van A', '1990-01-01', '123 ABC Street, XYZ City', 'Nam', 'buiquyhung@gmail.com', 'nguyenvana', 'password123', 'admin', '#'),
+('2', 'Tran Thi B', '1995-05-15', '456 DEF Street, XYZ City', 'Nữ', 'buiquyhung123@gmail.com', 'tranthib', 'secret456', 'admin', '#'),
+('3', 'Le Van C', '1988-12-20', '789 GHI Street, XYZ City', 'Nam', 'buiquyhung12345@gmail.com', 'levanc', 'pass789', 'admin', '#'),
+('4', 'Pham Van D', '1992-03-10', '456 JKL Street, XYZ City', 'Nam', 'phamvand@example.com', 'phamvand', '123456', 'user', '#'),
+('5', 'Hoang Thi E', '1997-08-05', '789 MNO Street, XYZ City', 'Nữ', 'hoangthie@example.com', 'hoangthie', 'abcdef', 'user', '#'),
+('6', 'Nguyen Van F', '1993-06-25', '101 PQR Street, XYZ City', 'Nam', 'nguyenvanf@example.com', 'nguyenvanf', 'qwerty', 'user', '#'),
+('7', 'Tran Van G', '1991-09-30', '202 STU Street, XYZ City', 'Nam', 'tranvang@example.com', 'tranvang', 'pass123', 'admin', '#'),
+('8', 'Le Thi H', '1987-04-18', '303 VWX Street, XYZ City', 'Nữ', 'lethih@example.com', 'lethih', 'abc123', 'user', '#'),
+('9', 'Pham Van I', '1994-11-28', '404 YZ Street, XYZ City', 'Nam', 'phamvani@example.com', 'phamvani', 'passpass', 'user', '#'),
+('10', 'Hoang Van K', '1996-02-14', '505 LMN Street, XYZ City', 'Nam', 'hoangvank@example.com', 'hoangvank', 'password', 'user', '#');
+
 
 -- Chèn 10 danh mục hãng đồng hồ vào bảng DanhMucSanPham
 INSERT INTO DanhMucSanPham (TenDanhMuc) VALUES ('Rolex');

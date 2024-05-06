@@ -14,6 +14,7 @@ namespace Models_TGDD
         public string Email { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }
+        public DateTime NgayTao { get; set; }
 
         public List<ChiTietDonHangModel> list_json_chitietdonhang { get; set; }
     }

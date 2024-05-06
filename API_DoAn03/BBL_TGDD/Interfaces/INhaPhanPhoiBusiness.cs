@@ -9,6 +9,7 @@ namespace BBL_TGDD.Interfaces
 {
     public partial interface INhaPhanPhoiBusiness
     {
+        IEnumerable<NhaPhanPhoiModel> GetAllData();
         NhaPhanPhoiModel GetDatabyID(string id);
         bool Create(NhaPhanPhoiModel model);
         bool Update(NhaPhanPhoiModel model);

@@ -9,6 +9,7 @@ namespace DAL_TGDD.Interfaces
 {
     public partial interface INhaPhanPhoiRepository
     {
+        IEnumerable<NhaPhanPhoiModel> GetAllData();
         NhaPhanPhoiModel GetDatabyID(string MaNPP);
         bool Create(NhaPhanPhoiModel model);
         bool Update(NhaPhanPhoiModel model);

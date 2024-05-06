@@ -53,28 +53,41 @@ namespace API_TGDD.Controllers
         {
             try
             {
-                var page = int.Parse(formData["page"].ToString());
+                var page = 1; // Giá trị mặc định hoặc giá trị bạn muốn xác định khi không tìm thấy khóa "page".
+                if (formData.ContainsKey("page"))
+                {
+                    page = int.Parse(formData["page"].ToString());
+                }
+
+                // Tương tự, kiểm tra và xử lý cho khóa "pageSize".
                 var pageSize = int.Parse(formData["pageSize"].ToString());
                 string ma_don_hang = "";
-                if (formData.Keys.Contains("ma_don_hang") && !string.IsNullOrEmpty(Convert.ToString(formData["ma_don_hang"]))) { ma_don_hang = Convert.ToString(formData["ma_don_hang"]); }
+                if (formData.Keys.Contains("ma_don_hang") && !string.IsNullOrEmpty(Convert.ToString(formData["ma_don_hang"])))
+                {
+                    ma_don_hang = Convert.ToString(formData["ma_don_hang"]);
+                }
                 string ten_khach_hang = "";
-                if (formData.Keys.Contains("ten_khach_hang") && !string.IsNullOrEmpty(Convert.ToString(formData["ten_khach_hang"]))) { ten_khach_hang = Convert.ToString(formData["ten_khach_hang"]); }
+                if (formData.Keys.Contains("ten_kh") && !string.IsNullOrEmpty(Convert.ToString(formData["ten_kh"])))
+                {
+                    ten_khach_hang = Convert.ToString(formData["ten_kh"]);
+                }
+
                 long total = 0;
                 var data = _DonHangBusiness.Search(page, pageSize, out total, ma_don_hang, ten_khach_hang);
-                return Ok(
-                    new
-                    {
-                        TotalItems = total,
-                        Data = data,
-                        Page = page,
-                        PageSize = pageSize
-                    }
-                    );
+
+                return Ok(new
+                {
+                    TotalItems = total,
+                    Data = data,
+                    Page = page,
+                    PageSize = pageSize
+                });
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
     }
 }

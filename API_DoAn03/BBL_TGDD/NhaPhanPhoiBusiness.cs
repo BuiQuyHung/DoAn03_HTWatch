@@ -16,6 +16,10 @@ namespace BBL_TGDD
         {
             _res = res;
         }
+        public IEnumerable<NhaPhanPhoiModel> GetAllData()
+        {
+            return _res.GetAllData();
+        }
         public NhaPhanPhoiModel GetDatabyID(string id)
         {
             return _res.GetDatabyID(id);

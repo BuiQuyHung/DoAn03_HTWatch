@@ -1,5 +1,6 @@
 ﻿using DAL_TGDD.Interfaces;
 using DataAccessLayer;
+using Model;
 using Models_TGDD;
 using System;
 using System.Collections.Generic;
@@ -74,14 +75,7 @@ namespace DAL_TGDD
                 "@HinhAnh", model.HinhAnh,
                 "@GiaSP", model.GiaSP,
                 "@SoLuong", model.SoLuong,
-                "@MaMenu", model.MaMenu,
-                "@MoTa", model.MoTa,
-                "@XuatXu", model.XuatXu,
-                "@ThuongHieu", model.ThuongHieu,
-                "@ThoiGianBaoHanh", model.ThoiGianBaoHanh,
-                "@LoaiMay", model.LoaiMay,
-                "@ChatLieu", model.ChatLieu,
-                "@DoDay", model.DoDay);
+                "@MoTa", model.MoTa);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -100,19 +94,12 @@ namespace DAL_TGDD
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sanpham_update",
                 "@MaSP", model.MaSP,
-                "@TenSP", model.TenSP,
+              "@TenSP", model.TenSP,
                 "@MaDanhMuc", model.MaDanhMuc,
                 "@HinhAnh", model.HinhAnh,
                 "@GiaSP", model.GiaSP,
                 "@SoLuong", model.SoLuong,
-                "@MaMenu", model.MaMenu,
-                "@MoTa", model.MoTa,
-                "@XuatXu", model.XuatXu,
-                "@ThuongHieu", model.ThuongHieu,
-                "@ThoiGianBaoHanh", model.ThoiGianBaoHanh,
-                "@LoaiMay", model.LoaiMay,
-                "@ChatLieu", model.ChatLieu,
-                "@DoDay", model.DoDay);
+                "@MoTa", model.MoTa);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -184,21 +171,85 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
-        public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()
+
+        public List<ThongKeSanPhamTonKhoModel> ThongKeSanPhamTonKho(int pageIndex, int pageSize, out long total)
         {
             string msgError = "";
+            total = 0;
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_ThongKeHangHoaTonKho");
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_TKSP_TonKho",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return dt.ConvertTo<ThongKeHangHoaTonKhoModel>().ToList();
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<ThongKeSanPhamTonKhoModel>().ToList();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+        public List<ThongKeSanPhamBanChayModel> ThongKeSanPhamBanChay(int pageIndex, int pageSize, out long total, DateTime NgayBatDau, DateTime NgayKetThuc)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_TKSP_BanChay",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize,
+                    "@NgayBatDau", NgayBatDau,
+                    "@NgayKetThuc", NgayKetThuc);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (int)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<ThongKeSanPhamBanChayModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<BaoCaoDoanhThuModel> BaoCaoDoanhThu(int pageIndex, int pageSize, out long total, DateTime NgayBatDau, DateTime NgayKetThuc)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_BaoCaoDoanhThu",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize,
+                    "@NgayBatDau", NgayBatDau,
+                    "@NgayKetThuc", NgayKetThuc);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (int)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<BaoCaoDoanhThuModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<BaoCaoDoanhThuTheoNamModel> BaoCaoDoanhThuTheoNam(int Nam)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_BaoCaoDoanhThu",
+                       "@Nam", Nam);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<BaoCaoDoanhThuTheoNamModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
 

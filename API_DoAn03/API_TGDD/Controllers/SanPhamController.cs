@@ -4,6 +4,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Model;
 using Models_TGDD;
 
 namespace API_TGDD.Controllers
@@ -110,11 +111,108 @@ namespace API_TGDD.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [Route("thong-ke-hang-hoa-ton-kho")]
-        [HttpGet]
-        public List<ThongKeHangHoaTonKhoModel> ThongKeHangHoaTonKho()
+
+        [Route("thongke-sanpham-tonkho")]
+        [HttpPost]
+        public IActionResult ThongKeSanPhamTonKho([FromBody] Dictionary<string, object> formData)
         {
-            return _sanphamBusiness.ThongKeHangHoaTonKho();
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+
+                long total = 0;
+                var data = _sanphamBusiness.ThongKeSanPhamTonKho(page, pageSize, out total);
+                return Ok(
+                    new
+                    {
+                        TotalItems = total,
+                        Data = data,
+                        Page = page,
+                        PageSize = pageSize
+                    }
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [Route("thongke-sanpham-banchay")]
+        [HttpPost]
+
+        public IActionResult ThongKeSanPhamBanChay([FromBody] Dictionary<string, object> formData)
+        {
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+                DateTime NgayBatDau = DateTime.MinValue; // Khởi tạo Ngay là null
+                if (formData.Keys.Contains("NgayBatDau") && !string.IsNullOrEmpty(Convert.ToString(formData["NgayBatDau"])))
+                {
+                    NgayBatDau = DateTime.Parse(Convert.ToString(formData["NgayBatDau"])); // Chuyển đổi từ chuỗi sang DateTime
+                }
+                DateTime NgayKetThuc = DateTime.MinValue; // Khởi tạo Ngay là null
+                if (formData.Keys.Contains("NgayKetThuc") && !string.IsNullOrEmpty(Convert.ToString(formData["NgayKetThuc"])))
+                {
+                    NgayKetThuc = DateTime.Parse(Convert.ToString(formData["NgayKetThuc"])); // Chuyển đổi từ chuỗi sang DateTime
+                }
+                long total = 0;
+                var data = _sanphamBusiness.ThongKeSanPhamBanChay(page, pageSize, out total, NgayBatDau, NgayKetThuc);
+                return Ok(new
+                {
+                    TotalItems = total,
+                    Data = data,
+                    Page = page,
+                    PageSize = pageSize
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        [Route("Bao-cao-doanh-thu")]
+        [HttpPost]
+        public IActionResult BaoCaoDoanhThu([FromBody] Dictionary<string, object> formData)
+        {
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+                DateTime NgayBatDau = DateTime.MinValue; // Khởi tạo Ngay là null
+                if (formData.Keys.Contains("NgayBatDau") && !string.IsNullOrEmpty(Convert.ToString(formData["NgayBatDau"])))
+                {
+                    NgayBatDau = DateTime.Parse(Convert.ToString(formData["NgayBatDau"])); // Chuyển đổi từ chuỗi sang DateTime
+                }
+                DateTime NgayKetThuc = DateTime.MinValue; // Khởi tạo Ngay là null
+                if (formData.Keys.Contains("NgayKetThuc") && !string.IsNullOrEmpty(Convert.ToString(formData["NgayKetThuc"])))
+                {
+                    NgayKetThuc = DateTime.Parse(Convert.ToString(formData["NgayKetThuc"])); // Chuyển đổi từ chuỗi sang DateTime
+                }
+                long total = 0;
+                var data = _sanphamBusiness.BaoCaoDoanhThu(page, pageSize, out total, NgayBatDau, NgayKetThuc);
+                return Ok(new
+                {
+                    TotalItems = total,
+                    Data = data,
+                    Page = page,
+                    PageSize = pageSize
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+        [Route("Bao-cao-doanh-thu-theo-nam")]
+        [HttpPost]
+        public List<BaoCaoDoanhThuTheoNamModel> BaoCaoDoanhThuTheoNam(int Nam)
+        {
+            return _sanphamBusiness.BaoCaoDoanhThuTheoNam(Nam);
         }
     }
 }

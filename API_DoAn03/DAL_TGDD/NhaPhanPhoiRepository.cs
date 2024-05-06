@@ -16,6 +16,21 @@ namespace DAL_TGDD
         {
             _dbHelper = dbHelper;
         }
+        public IEnumerable<NhaPhanPhoiModel> GetAllData()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_nhaphanphoi_GetAll");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<NhaPhanPhoiModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public NhaPhanPhoiModel GetDatabyID(string MaNPP)
         {
             string msgError = "";

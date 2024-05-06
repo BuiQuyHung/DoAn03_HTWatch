@@ -96,17 +96,17 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
-        public List<DonHangModel> Search(int pageIndex, int pageSize, out long total, string ma_don_hang, string ten_khach_hang)
+        public List<DonHangModel> Search(int page, int pageSize, out long total, string ma_don_hang, string ten_khach_hang)
         {
             string msgError = "";
             total = 0;
             try
             {
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_donhang_search",
-                    "@page_index", pageIndex,
-                    "@page_size", pageSize,
+                    "@page", page,
+                    "@pageSize", pageSize,
                     "@ma_don_hang", ma_don_hang,
-                    "@ten_khach_hang", ten_khach_hang);
+                    "@ten_kh", ten_khach_hang);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];

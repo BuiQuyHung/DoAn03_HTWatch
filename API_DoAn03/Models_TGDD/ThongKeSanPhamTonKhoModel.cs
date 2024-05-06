@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models_TGDD
 {
-    public class ThongKeHangHoaTonKhoModel
+    public class ThongKeSanPhamTonKhoModel
     {
         public string MaSP { get; set; }
         public string TenSP { get; set; }
