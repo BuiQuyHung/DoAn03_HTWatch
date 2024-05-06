@@ -25,7 +25,7 @@ namespace BBL_TGDD
         {
             return _res.GetData();
         }
-        public bool Create(SanPhamModel model)
+        public bool Create(SanPhamModel2 model)
         {
             return _res.Create(model);
         }

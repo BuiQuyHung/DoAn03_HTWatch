@@ -37,7 +37,7 @@ namespace API_TGDD.Controllers
         }
         [Route("Create-SanPham")]
         [HttpPost]
-        public SanPhamModel CreateItem([FromBody] SanPhamModel model)
+        public SanPhamModel2 CreateItem([FromBody] SanPhamModel2 model)
         {
             _sanphamBusiness.Create(model);
             return model;

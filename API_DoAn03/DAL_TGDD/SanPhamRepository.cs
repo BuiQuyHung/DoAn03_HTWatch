@@ -64,7 +64,7 @@ namespace DAL_TGDD
         //        throw ex;
         //    }
         //}
-        public bool Create(SanPhamModel model)
+        public bool Create(SanPhamModel2 model)
         {
             string msgError = "";
             try
