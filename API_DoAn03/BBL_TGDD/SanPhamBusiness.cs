@@ -29,7 +29,7 @@ namespace BBL_TGDD
         {
             return _res.Create(model);
         }
-        public bool Update(SanPhamModel model)
+        public bool Update(SanPhamModel2 model)
         {
             return _res.Update(model);
         }

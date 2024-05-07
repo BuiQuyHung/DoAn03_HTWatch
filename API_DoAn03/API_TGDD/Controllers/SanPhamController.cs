@@ -44,7 +44,7 @@ namespace API_TGDD.Controllers
         }
         [Route("Update-SanPham")]
         [HttpPost]
-        public SanPhamModel UpdateItem([FromBody] SanPhamModel model)
+        public SanPhamModel2 UpdateItem([FromBody] SanPhamModel2 model)
         {
             _sanphamBusiness.Update(model);
             return model;

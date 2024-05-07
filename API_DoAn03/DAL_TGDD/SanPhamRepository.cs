@@ -87,7 +87,7 @@ namespace DAL_TGDD
                 throw ex;
             }
         }
-        public bool Update(SanPhamModel model)
+        public bool Update(SanPhamModel2 model)
         {
             string msgError = "";
             try
