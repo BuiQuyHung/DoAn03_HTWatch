@@ -8,7 +8,7 @@ using Models_TGDD;
 
 namespace API_TGDD.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
@@ -159,14 +159,34 @@ namespace API_TGDD.Controllers
             var response = new ResponseModel();
             try
             {
-                var page = int.Parse(formData["page"].ToString());
-                var pageSize = int.Parse(formData["pageSize"].ToString());
+                int page = 1; // Giá trị mặc định
+                int pageSize = 10; // Giá trị mặc định
+
+                if (formData.ContainsKey("page") && formData["page"] != null)
+                {
+                    page = int.Parse(formData["page"].ToString());
+                }
+
+                if (formData.ContainsKey("pageSize") && formData["pageSize"] != null)
+                {
+                    pageSize = int.Parse(formData["pageSize"].ToString());
+                }
+
                 string hoten = "";
-                if (formData.Keys.Contains("hoten") && !string.IsNullOrEmpty(Convert.ToString(formData["hoten"]))) { hoten = Convert.ToString(formData["hoten"]); }
+                if (formData.ContainsKey("hoten") && !string.IsNullOrEmpty(Convert.ToString(formData["hoten"])))
+                {
+                    hoten = Convert.ToString(formData["hoten"]);
+                }
+
                 string taikhoan = "";
-                if (formData.Keys.Contains("taikhoan") && !string.IsNullOrEmpty(Convert.ToString(formData["taikhoan"]))) { hoten = Convert.ToString(formData["taikhoan"]); }
+                if (formData.ContainsKey("taikhoan") && !string.IsNullOrEmpty(Convert.ToString(formData["taikhoan"])))
+                {
+                    taikhoan = Convert.ToString(formData["taikhoan"]);
+                }
+
                 long total = 0;
                 var data = _userBusiness.Search(page, pageSize, out total, hoten, taikhoan);
+
                 response.TotalItems = total;
                 response.Data = data;
                 response.Page = page;
@@ -178,5 +198,6 @@ namespace API_TGDD.Controllers
             }
             return response;
         }
+
     }
 }
