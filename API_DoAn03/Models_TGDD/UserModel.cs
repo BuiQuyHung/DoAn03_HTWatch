@@ -20,6 +20,5 @@ namespace Models_TGDD
         public string role { get; set; }
         public string token { get; set; }
         public string image_url { get; set; }
-        public ClaimsIdentity? FullName { get; set; }
     }
 }

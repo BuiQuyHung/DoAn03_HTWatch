@@ -94,7 +94,7 @@ namespace DAL_TGDD
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_sanpham_update",
                 "@MaSP", model.MaSP,
-              "@TenSP", model.TenSP,
+                "@TenSP", model.TenSP,
                 "@MaDanhMuc", model.MaDanhMuc,
                 "@HinhAnh", model.HinhAnh,
                 "@GiaSP", model.GiaSP,

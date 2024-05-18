@@ -183,7 +183,7 @@ CREATE TABLE BinhLuan (
 )
 
 CREATE TABLE [User] (
-    user_id NVARCHAR(50) NOT NULL,
+    user_id INT IDENTITY(1,1) NOT NULL,
     hoten NVARCHAR(150) NULL,
     ngaysinh DATE NULL,
     diachi NVARCHAR(250) NULL,
@@ -195,18 +195,19 @@ CREATE TABLE [User] (
     image_url VARCHAR(300) NULL,
     CONSTRAINT PK_user PRIMARY KEY CLUSTERED (user_id)
 );
-INSERT INTO [User] (user_id, hoten, ngaysinh, diachi, gioitinh, email, taikhoan, matkhau, role, image_url) 
+
+INSERT INTO [User] (hoten, ngaysinh, diachi, gioitinh, email, taikhoan, matkhau, role, image_url) 
 VALUES 
-('1', 'Nguyen Van A', '1990-01-01', '123 ABC Street, XYZ City', 'Nam', 'buiquyhung@gmail.com', 'nguyenvana', 'password123', 'admin', '#'),
-('2', 'Tran Thi B', '1995-05-15', '456 DEF Street, XYZ City', 'Nữ', 'buiquyhung123@gmail.com', 'tranthib', 'secret456', 'admin', '#'),
-('3', 'Le Van C', '1988-12-20', '789 GHI Street, XYZ City', 'Nam', 'buiquyhung12345@gmail.com', 'levanc', 'pass789', 'admin', '#'),
-('4', 'Pham Van D', '1992-03-10', '456 JKL Street, XYZ City', 'Nam', 'phamvand@example.com', 'phamvand', '123456', 'user', '#'),
-('5', 'Hoang Thi E', '1997-08-05', '789 MNO Street, XYZ City', 'Nữ', 'hoangthie@example.com', 'hoangthie', 'abcdef', 'user', '#'),
-('6', 'Nguyen Van F', '1993-06-25', '101 PQR Street, XYZ City', 'Nam', 'nguyenvanf@example.com', 'nguyenvanf', 'qwerty', 'user', '#'),
-('7', 'Tran Van G', '1991-09-30', '202 STU Street, XYZ City', 'Nam', 'tranvang@example.com', 'tranvang', 'pass123', 'admin', '#'),
-('8', 'Le Thi H', '1987-04-18', '303 VWX Street, XYZ City', 'Nữ', 'lethih@example.com', 'lethih', 'abc123', 'user', '#'),
-('9', 'Pham Van I', '1994-11-28', '404 YZ Street, XYZ City', 'Nam', 'phamvani@example.com', 'phamvani', 'passpass', 'user', '#'),
-('10', 'Hoang Van K', '1996-02-14', '505 LMN Street, XYZ City', 'Nam', 'hoangvank@example.com', 'hoangvank', 'password', 'user', '#');
+('Bui Quy Hung', '1997-03-10', 'Gia Tan, Gia Loc, Hai Duong', 'Nam', 'buiquyhung@gmail.com', 'buiquyhung', '12345', 'admin', '#'),
+('Tran Thi B', '1995-05-15', '456 DEF Street, XYZ City', 'Nữ', 'buiquyhung123@gmail.com', 'tranthib', 'secret456', 'admin', '#'),
+('Le Van C', '1988-12-20', '789 GHI Street, XYZ City', 'Nam', 'buiquyhung12345@gmail.com', 'levanc', 'pass789', 'admin', '#'),
+('Pham Van D', '1992-03-10', '456 JKL Street, XYZ City', 'Nam', 'phamvand@example.com', 'phamvand', '123456', 'user', '#'),
+('Hoang Thi E', '1997-08-05', '789 MNO Street, XYZ City', 'Nữ', 'hoangthie@example.com', 'hoangthie', 'abcdef', 'user', '#'),
+('Nguyen Van F', '1993-06-25', '101 PQR Street, XYZ City', 'Nam', 'nguyenvanf@example.com', 'nguyenvanf', 'qwerty', 'user', '#'),
+('Tran Van G', '1991-09-30', '202 STU Street, XYZ City', 'Nam', 'tranvang@example.com', 'tranvang', 'pass123', 'admin', '#'),
+('Le Thi H', '1987-04-18', '303 VWX Street, XYZ City', 'Nữ', 'lethih@example.com', 'lethih', 'abc123', 'user', '#'),
+('Pham Van I', '1994-11-28', '404 YZ Street, XYZ City', 'Nam', 'phamvani@example.com', 'phamvani', 'passpass', 'user', '#'),
+('Hoang Van K', '1996-02-14', '505 LMN Street, XYZ City', 'Nam', 'hoangvank@example.com', 'hoangvank', 'password', 'user', '#');
 
 
 -- Chèn 10 danh mục hãng đồng hồ vào bảng DanhMucSanPham
