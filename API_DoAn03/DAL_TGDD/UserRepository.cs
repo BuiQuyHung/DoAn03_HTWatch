@@ -20,9 +20,8 @@ namespace DAL_TGDD
 
         public bool Create(UserModel model)
         {
-            string msgError = "";
-            try
-            {
+                string msgError = "";
+            
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_user_create",
                 "@hoten", model.hoten,
                 "@ngaysinh", model.ngaysinh,
@@ -33,16 +32,9 @@ namespace DAL_TGDD
                 "@matkhau", model.matkhau,
                 "@role", model.role,
                 "@image_url", model.image_url);
-                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-                {
-                    throw new Exception(Convert.ToString(result) + msgError);
-                }
+           
                 return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+       
         }
 
         public bool Delete(string id)
