@@ -1,0 +1,17 @@
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\BBL_DoAn04.deps.json
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\BBL_DoAn04.dll
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\BBL_DoAn04.pdb
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\DAL_DoAn04.dll
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\Models_DoAn04.dll
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\DAL_DoAn04.pdb
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\bin\Debug\net6.0\Models_DoAn04.pdb
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.csproj.AssemblyReference.cache
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.AssemblyInfoInputs.cache
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.AssemblyInfo.cs
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.csproj.CoreCompileInputs.cache
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.csproj.CopyComplete
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.dll
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\refint\BBL_DoAn04.dll
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\BBL_DoAn04.pdb
+D:\Hoc Tap\Năm 4\Đồ Án 04\Project ĐA 04\API_DoAn04\BBL_TGDD\obj\Debug\net6.0\ref\BBL_DoAn04.dll
